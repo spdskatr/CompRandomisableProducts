@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ChunkSandstone"]</xpath>
+        <value><thingClass>ThingWithComps</thingClass></value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="ChunkSandstone"]</xpath>
+        <value>
+        <comps>
+            <li Class="CompRandomisableRecipe.CompProperties_RandomisableProducts">
+                <limitsForProducts>
+                    <li>
+                        <def>BlocksSandstone</def>
+                        <lowerLimit>10</lowerLimit>
+                        <upperLimit>50</upperLimit>
+                    </li>
+                </limitsForProducts>
+            </li>
+        </comps>
+        </value>
+    </Operation>
+</Patch>

@@ -1,0 +1,7 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[SS] CompRandomisableRecipe\Source\CompRandomisableRecipe\obj\Debug\CompRandomisableRecipe.csprojResolveAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[SS] CompRandomisableRecipe\Source\Assemblies\CompRandomisableRecipe.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[SS] CompRandomisableRecipe\Source\Assemblies\CompRandomisableRecipe.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[SS] CompRandomisableRecipe\Source\CompRandomisableRecipe\obj\Debug\CompRandomisableRecipe.dll
+C:\Assemblies\CompRandomisableRecipe.dll
+C:\Assemblies\CompRandomisableRecipe.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\[SS] CompRandomisableRecipe\Assemblies\CompRandomisableRecipe.dll
