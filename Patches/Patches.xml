@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+    <!--This xml file is PURELY FOR TESTING PURPOSES. You do NOT need this when modding-->
     <Operation Class="PatchOperationAdd">
         <xpath>/Defs/ThingDef[defName="ChunkSandstone"]</xpath>
         <value><thingClass>ThingWithComps</thingClass></value>
@@ -8,7 +9,7 @@
         <xpath>/Defs/ThingDef[defName="ChunkSandstone"]</xpath>
         <value>
         <comps>
-            <li Class="CompRandomisableRecipe.CompProperties_RandomisableProducts">
+            <li Class="CompRandomisableProducts.CompProperties_RandomisableProducts">
                 <limitsForProducts>
                     <li>
                         <def>BlocksSandstone</def>
