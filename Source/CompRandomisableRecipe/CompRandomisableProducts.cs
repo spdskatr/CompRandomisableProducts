@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
@@ -8,11 +9,28 @@ namespace CompRandomisableProducts
 {
     public class CompProperties_RandomisableProducts : CompProperties
     {
+        public class PickOneOutOfRange : DefLowUpperTriple
+        {
+            public List<DefLowUpperTriple> options;
+            public override ThingCountClass Randomise()
+            {
+                if (options?.Any() ?? false)
+                {
+                    return options.RandomElement().Randomise();
+                }
+                throw new NullReferenceException("CompRandomisableProducts.PickOneOutOfRange but there are no options.");
+            }
+        }
         public class DefLowUpperTriple
         {
             public ThingDef def;
             public int lowerLimit;
             public int upperLimit;
+            public virtual ThingCountClass Randomise()
+            {
+                int amount = GenMath.RoundRandom(lowerLimit + Rand.Value * (upperLimit - lowerLimit));
+                return new ThingCountClass(def, amount);
+            }
         }
         public List<DefLowUpperTriple> limitsForProducts = new List<DefLowUpperTriple>();
 
@@ -63,21 +81,11 @@ namespace CompRandomisableProducts
         {
             if (parent.def.butcherProducts != null)
             {
-                for (int i = 0; i < parent.def.butcherProducts.Count; i++)
+                parent.def.butcherProducts.Clear();
+                foreach (var item in Props.limitsForProducts)
                 {
-                    var prod = parent.def.butcherProducts[i];
-                    RandomiseCount(prod);
+                    parent.def.butcherProducts.Add(item.Randomise());
                 }
-            }
-        }
-
-        public virtual void RandomiseCount(ThingCountClass tcc)
-        {
-            var tccProps = Props.limitsForProducts.Find(d => d.def == tcc.thingDef);
-            if (tccProps != null)
-            {
-                var difference = tccProps.upperLimit - tccProps.lowerLimit;
-                tcc.count = GenMath.RoundRandom(tccProps.lowerLimit + Rand.Value * difference);
             }
         }
     }
