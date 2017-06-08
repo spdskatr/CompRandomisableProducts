@@ -9,6 +9,22 @@ namespace CompRandomisableProducts
 {
     public class CompProperties_RandomisableProducts : CompProperties
     {
+        public class DefLowUpperTripleWeighted : DefLowUpperTriple
+        {
+            public float weight = 1f;
+        }
+        public class PickOneOutOfRangeWeighted : DefLowUpperTriple
+        {
+            public List<DefLowUpperTripleWeighted> weightedOptions;
+            public override ThingCountClass Randomise()
+            {
+                if (weightedOptions?.Any() ?? false)
+                {
+                    return weightedOptions.RandomElementByWeight(t => t.weight).Randomise();
+                }
+                throw new NullReferenceException("CompRandomisableProducts.PickOneOutOfRange but there are no options.");
+            }
+        }
         public class PickOneOutOfRange : DefLowUpperTriple
         {
             public List<DefLowUpperTriple> options;
