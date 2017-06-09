@@ -70,11 +70,6 @@ namespace CompRandomisableProducts
                 var limit = limitsForProducts[i];
                 if (limit.lowerLimit > limit.upperLimit)
                     yield return "CompProperties_RandomisableProducts in " + parentDef.defName + ": lowerLimit of " + limit.def + "is greater than upperLimit.";
-                var butcherProduct = parentDef.butcherProducts.Find(t => t.thingDef == limit.def);
-                if (butcherProduct == null)
-                    yield return "CompProperties_RandomisableProducts in " + parentDef.defName + " has a defined limitsForProducts but def has no such ThingDef in butcher products.";
-                else if (limit.lowerLimit > butcherProduct.count || limit.upperLimit < butcherProduct.count)
-                    yield return "CompProperties_RandomisableProducts in " + parentDef.defName + " defines butcherProducts but it is outside defined range.";
                 
             }
         }

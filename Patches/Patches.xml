@@ -2,20 +2,36 @@
 <Patch>
     <!--This xml file is PURELY FOR TESTING PURPOSES. You do NOT need this when modding-->
     <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="ChunkSandstone"]</xpath>
+        <xpath>/Defs/ThingDef[defName="ChunkLimestone"]</xpath>
         <value><thingClass>ThingWithComps</thingClass></value>
     </Operation>
     <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName="ChunkSandstone"]</xpath>
+        <xpath>/Defs/ThingDef[defName="ChunkLimestone"]</xpath>
         <value>
         <comps>
             <li Class="CompRandomisableProducts.CompProperties_RandomisableProducts">
                 <limitsForProducts>
                     <li>
-                        <def>BlocksSandstone</def>
+                        <def>BlocksLimestone</def>
                         <lowerLimit>10</lowerLimit>
                         <upperLimit>50</upperLimit>
                     </li>
+					<li Class="CompRandomisableProducts.PickOneOutOfRangeWeighted">
+						<weightedOptions>
+							<li>
+								<def>Potato</def>
+								<lowerLimit>10</lowerLimit>
+								<upperLimit>50</upperLimit>
+								<weight>1.5</weight>
+							</li>
+							<li>
+								<def>Ambrosia</def>
+								<lowerLimit>10</lowerLimit>
+								<upperLimit>50</upperLimit>
+								<weight>0.5</weight>
+							</li>
+						</weightedOptions>
+					</li>
                 </limitsForProducts>
             </li>
         </comps>
