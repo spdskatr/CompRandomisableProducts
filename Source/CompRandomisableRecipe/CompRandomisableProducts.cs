@@ -7,47 +7,47 @@ using Verse;
 
 namespace CompRandomisableProducts
 {
+    public class DefLowUpperTripleWeighted : DefLowUpperTriple
+    {
+        public float weight = 1f;
+    }
+    public class PickOneOutOfRangeWeighted : DefLowUpperTriple
+    {
+        public List<DefLowUpperTripleWeighted> weightedOptions;
+        public override ThingCountClass Randomise()
+        {
+            if (weightedOptions?.Any() ?? false)
+            {
+                return weightedOptions.RandomElementByWeight(t => t.weight).Randomise();
+            }
+            throw new NullReferenceException("CompRandomisableProducts.PickOneOutOfRange but there are no options.");
+        }
+    }
+    public class PickOneOutOfRange : DefLowUpperTriple
+    {
+        public List<DefLowUpperTriple> options;
+        public override ThingCountClass Randomise()
+        {
+            if (options?.Any() ?? false)
+            {
+                return options.RandomElement().Randomise();
+            }
+            throw new NullReferenceException("CompRandomisableProducts.PickOneOutOfRange but there are no options.");
+        }
+    }
+    public class DefLowUpperTriple
+    {
+        public ThingDef def;
+        public int lowerLimit;
+        public int upperLimit;
+        public virtual ThingCountClass Randomise()
+        {
+            int amount = GenMath.RoundRandom(lowerLimit + Rand.Value * (upperLimit - lowerLimit));
+            return new ThingCountClass(def, amount);
+        }
+    }
     public class CompProperties_RandomisableProducts : CompProperties
     {
-        public class DefLowUpperTripleWeighted : DefLowUpperTriple
-        {
-            public float weight = 1f;
-        }
-        public class PickOneOutOfRangeWeighted : DefLowUpperTriple
-        {
-            public List<DefLowUpperTripleWeighted> weightedOptions;
-            public override ThingCountClass Randomise()
-            {
-                if (weightedOptions?.Any() ?? false)
-                {
-                    return weightedOptions.RandomElementByWeight(t => t.weight).Randomise();
-                }
-                throw new NullReferenceException("CompRandomisableProducts.PickOneOutOfRange but there are no options.");
-            }
-        }
-        public class PickOneOutOfRange : DefLowUpperTriple
-        {
-            public List<DefLowUpperTriple> options;
-            public override ThingCountClass Randomise()
-            {
-                if (options?.Any() ?? false)
-                {
-                    return options.RandomElement().Randomise();
-                }
-                throw new NullReferenceException("CompRandomisableProducts.PickOneOutOfRange but there are no options.");
-            }
-        }
-        public class DefLowUpperTriple
-        {
-            public ThingDef def;
-            public int lowerLimit;
-            public int upperLimit;
-            public virtual ThingCountClass Randomise()
-            {
-                int amount = GenMath.RoundRandom(lowerLimit + Rand.Value * (upperLimit - lowerLimit));
-                return new ThingCountClass(def, amount);
-            }
-        }
         public List<DefLowUpperTriple> limitsForProducts = new List<DefLowUpperTriple>();
 
         public CompProperties_RandomisableProducts()

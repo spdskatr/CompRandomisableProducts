@@ -9,31 +9,59 @@
         <xpath>/Defs/ThingDef[defName="ChunkLimestone"]</xpath>
         <value>
         <comps>
-            <li Class="CompRandomisableProducts.CompProperties_RandomisableProducts">
-                <limitsForProducts>
-                    <li>
-                        <def>BlocksLimestone</def>
-                        <lowerLimit>10</lowerLimit>
-                        <upperLimit>50</upperLimit>
-                    </li>
+			<li Class="CompRandomisableProducts.CompProperties_RandomisableProducts">
+				<limitsForProducts>
 					<li Class="CompRandomisableProducts.PickOneOutOfRangeWeighted">
 						<weightedOptions>
 							<li>
-								<def>Potato</def>
+								<def>Steel</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
-								<weight>1.5</weight>
 							</li>
 							<li>
-								<def>Ambrosia</def>
+								<def>RawBerries</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
-								<weight>0.5</weight>
+							</li>
+							<li>
+								<def>BlocksGranite</def>
+								<lowerLimit>10</lowerLimit>
+								<upperLimit>50</upperLimit>
+							</li>
+							<li>
+								<def>BlocksMarble</def>
+								<lowerLimit>10</lowerLimit>
+								<upperLimit>50</upperLimit>
+							</li>
+							<li>
+								<def>Cloth</def>
+								<lowerLimit>10</lowerLimit>
+								<upperLimit>50</upperLimit>
+							</li>
+							<li>
+								<def>RawRice</def>
+								<lowerLimit>10</lowerLimit>
+								<upperLimit>50</upperLimit>
+							</li>
+							<li>
+								<def>RawPotatoes</def>
+								<lowerLimit>10</lowerLimit>
+								<upperLimit>50</upperLimit>
+							</li>
+							<li>
+								<def>EtherGoop</def>
+								<lowerLimit>1</lowerLimit>
+								<upperLimit>10</upperLimit>
+							</li>
+							<li>
+								<def>WoodLog</def>
+								<lowerLimit>10</lowerLimit>
+								<upperLimit>50</upperLimit>
 							</li>
 						</weightedOptions>
 					</li>
-                </limitsForProducts>
-            </li>
+				</limitsForProducts>
+			</li>
         </comps>
         </value>
     </Operation>
