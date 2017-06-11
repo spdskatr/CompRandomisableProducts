@@ -76,6 +76,7 @@ namespace CompRandomisableProducts
     }
     public class CompRandomisableProducts : ThingComp
     {
+        static bool first = false;
         public CompProperties_RandomisableProducts Props => (CompProperties_RandomisableProducts)props;
         public override void PostExposeData()
         {
@@ -86,6 +87,14 @@ namespace CompRandomisableProducts
         {
             base.PostDestroy(mode, previousMap);
             Randomise();
+        }
+        public override void Initialize(CompProperties props)
+        {
+            base.Initialize(props);
+            if (!first)
+            {
+                Randomise();
+            }
         }
 
         public void Randomise()

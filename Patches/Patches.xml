@@ -17,46 +17,49 @@
 								<def>Steel</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
+								<weight>0.5</weight>
 							</li>
 							<li>
 								<def>RawBerries</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
+								<weight>0.5</weight>
 							</li>
 							<li>
 								<def>BlocksGranite</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
+								<weight>0.5</weight>
 							</li>
 							<li>
 								<def>BlocksMarble</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
+								<weight>0.5</weight>
 							</li>
 							<li>
 								<def>Cloth</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
+								<weight>0.5</weight>
 							</li>
 							<li>
 								<def>RawRice</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
+								<weight>0.5</weight>
 							</li>
 							<li>
 								<def>RawPotatoes</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
-							</li>
-							<li>
-								<def>EtherGoop</def>
-								<lowerLimit>1</lowerLimit>
-								<upperLimit>10</upperLimit>
+								<weight>0.5</weight>
 							</li>
 							<li>
 								<def>WoodLog</def>
 								<lowerLimit>10</lowerLimit>
 								<upperLimit>50</upperLimit>
+								<weight>2.0</weight>
 							</li>
 						</weightedOptions>
 					</li>
