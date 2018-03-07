@@ -94,6 +94,7 @@ namespace CompRandomisableProducts
             if (!first)
             {
                 Randomise();
+                first = true;
             }
         }
 
